@@ -47,3 +47,6 @@ NextGen Mobile Phone Shop having 20 Pages There are,
 19) Oppo Product Page
 
 20) Xiaomi Product Page
+
+
+Screen Shots of The NextGen Mobile Phone Shop Web Site
