@@ -117,7 +117,7 @@ Privacy Policy Page
 Terms Of Services Page
 ![Screenshot 2024-11-15 085516](https://github.com/user-attachments/assets/3b84d6c6-c26b-4a57-808e-b8d7a879f822)
 
-Mobile Views Of The NextGen Mobile Site
+            Mobile Views Of The NextGen Mobile Site
 ![Screenshot 2024-11-18 003011](https://github.com/user-attachments/assets/fc920658-0784-4dd4-b658-2c0f51caf6d0)
 
 ![Screenshot 2024-11-18 002704](https://github.com/user-attachments/assets/7c0db98a-b5a8-4261-8451-228109367c36)
@@ -128,4 +128,11 @@ NextGen Footer Section
 NextGen Database Inside Php MyAdmin
 ![Screenshot 2024-11-15 085755](https://github.com/user-attachments/assets/0581ead1-b0a4-4da1-adf9-371117ab4d7d)
 
+  Video Demonstration of The NextGen Mobiles
+              
+Video Demonstration Part 01    https://youtu.be/k3b-WB1FSOQ     
+
+Video Demonstration Part 02    https://youtu.be/roLMXCQQFWw   
+
+These two video links will be help to understand the all over the process of the nextgen mobile site
 
