@@ -130,11 +130,11 @@ NextGen Footer Section
 NextGen Database Inside Php MyAdmin
 ![Screenshot 2024-11-15 085755](https://github.com/user-attachments/assets/0581ead1-b0a4-4da1-adf9-371117ab4d7d)
 
-  Video Demonstration of The NextGen Mobiles
+           Video Demonstration of The NextGen Mobiles
               
 Video Demonstration Part 01    https://youtu.be/k3b-WB1FSOQ     
 
 Video Demonstration Part 02    https://youtu.be/roLMXCQQFWw   
 
-These two video links will be help to understand the all over the process of the nextgen mobile site
+These two video links will be help to understand the all over the process of the nextgen mobile phone shop website
 
