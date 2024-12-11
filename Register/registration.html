@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Registration | Next Gen</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-image: url('login.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* style the container */
+.container {
+  position: absolute;
+  border-radius: 10px;
+  background-color: rgba(242, 242, 242, 0.9); /* Slightly transparent background */
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  width: 100%;
+  margin: auto;
+} 
+
+input[type=text],
+.btn {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 4px;
+  margin: 5px 0;
+  opacity: 0.85;
+  display: inline-block;
+  font-size: 17px;
+  line-height: 20px;
+  text-decoration: none; 
+  color: rgb(9, 9, 9);
+  background: linear-gradient(135deg, #79fbff, #ff53fc);  
+}
+
+input[type=text]:hover,
+.btn:hover {
+  opacity: 1;
+  background: linear-gradient(135deg, #e9cd71, #e16d6d);
+  color: #010101;
+  font-weight: 600;
+}
+
+input[type=password],
+.btn {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 4px;
+  margin: 5px 0;
+  opacity: 0.85;
+  display: inline-block;
+  font-size: 17px;
+  line-height: 20px;
+  text-decoration: none; 
+  color: white;
+  background:linear-gradient(135deg, #79fbff, #ff53fc); 
+}
+
+input[type=password]:hover,
+.btn:hover {
+  opacity: 1;
+  background: linear-gradient(135deg, #e9cd71, #e16d6d);
+  color: #010101;
+  font-weight: 600;
+}
+
+
+input[type=submit] {
+    width: 100%;
+  padding: 5px;
+  border: none;
+  border-radius: 4px;
+  margin: 5px 0;
+  opacity: 0.85;
+  display: inline-block;
+  font-size: 17px;
+  line-height: 20px;
+  text-decoration: none; 
+  color: white;
+  background-color: #ff8605;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #0008ff;
+}
+
+input[type=reset] {
+width: 100%;
+  padding: 5px;
+  border: none;
+  border-radius: 4px;
+  margin: 5px 0;
+  opacity: 0.85;
+  display: inline-block;
+  font-size: 17px;
+  line-height: 20px;
+  text-decoration: none; 
+  color: white;
+  background-color:  #0e7500;
+  cursor: pointer;
+}
+
+input[type=reset]:hover {
+  background-color: #ff0000;
+}
+
+input[type=button] {
+width: 100%;
+  padding: 5px;
+  border: none;
+  border-radius: 4px;
+  margin: 5px 0;
+  opacity: 0.85;
+  display: inline-block;
+  font-size: 17px;
+  line-height: 20px;
+  text-decoration: none; 
+  color: white;
+  background-color:#660055;
+  cursor: pointer;
+}
+
+input[type=button]:hover {
+  background-color:#644600;
+}
+
+/* Responsive layout - when the screen is less than 650px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 650px) {
+  .col {
+    width: 100%;
+    margin-top: 0;
+  }
+  /* hide the vertical line */
+  .vl {
+    display: none;
+  }
+  /* show the hidden text on small screens */
+  .hide-md-lg {
+    display: block;
+    text-align: center;
+  }
+
+  .login-btn {
+  width: 48%;
+  padding: 12px;
+  border: none;
+  border-radius: 4px;
+  margin: 5px 1%;
+  background-color: #007bff;
+  color: white;
+  font-size: 17px;
+  cursor: pointer;
+}
+
+.login-btn:hover {
+  background-color: #0056b3;
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-between;
+}
+}
+</style>
+
+<script>
+  function redirectToHome() {
+  window.location.href = '../HomePage/index.html';
+}
+function validateForm()
+{
+    var x=document.forms["Registrationform"]["firstname"].value;
+if (x==null || x=="")
+
+{
+alert("First name must be filled out");
+return false;
+}
+
+
+var z=document.forms["Registrationform"]["lastname"].value;
+if (z==null || z=="")
+
+{
+alert("Last name must be filled out");
+return false;
+}
+var x = document.forms["Registrationform"]["email"].value; 
+  var atpos = x.indexOf("@");
+  var dotpos = x.lastIndexOf(".");
+  if (atpos < 1 || dotpos < atpos + 2 || dotpos + 2 >= x.length) {
+    alert("Not a valid e-mail address");
+    return false;
+  }
+
+  const pat = /^\+94[0-9]{9}$/;
+  if (!document.forms["Registrationform"]["phone"].value.match(pat)) {
+    alert("Please enter a valid 10-digit phone number starting with +94!");
+    return false;
+  } 
+
+  const nicPattern = /^[0-9]+$/; 
+  var nic = document.forms["Registrationform"]["nic"].value;
+  if (!nic.match(nicPattern)) {
+    alert("Invalid NIC Number. Only digits are allowed.");
+    return false;
+  }
+
+  var y=document.forms["Registrationform"]["username"].value;
+if (y==null || y=="")
+
+{
+alert("Username must be filled out");
+return false;
+}
+
+var y=document.forms["Registrationform"]["password"].value;
+if (y==null || y=="")
+
+{
+alert("Password must be filled out");
+return false;
+}
+
+}
+</script>
+
+</head>
+<body>
+<div class="container">
+    <div class="row">
+      <h2 style="text-align:center">Registration</h2>
+      <form name="Registrationform" action="registration.php" onsubmit="return validateForm()" method="post">
+      First name :<input type="text" name="firstname" placeholder="Enter Your First Name">
+      Last name :<input type= "text" name="lastname"placeholder="Enter Your Last Name">
+      Email: <input type="text" name="email" placeholder="Enter Your E-mail">
+      Phone No :<input name="phone" type="text" id="phone" size="30" placeholder="+94779659513"/>
+      NIC Number :<input name="nic" type="text" id="nic" size="30" placeholder="123456789658"/>
+      Username<input type="text" name="username" placeholder="Enter Your UserName">
+      Password<input type="password" name="password" placeholder="Enter Your Password">
+      <div class="button-container">
+      <input type="submit" value="Register">  <a href="../Login/login.html"></a>
+      <input type="reset" value="Clear"> 
+      <input type="button" value="Go to Home" class="login-btn" onclick="redirectToHome()">
+    </div>
+    </div>
+  </form>
+</div>
+<div class="bottom-container">
+</div>
+</body>
+</html>

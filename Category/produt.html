@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NextGen | Products</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="product.css">
+</head>
+<body>
+    <header id="header">
+        <div class="logo-container">
+            <img src="../HomePage/Images/Home/logo.png" alt="NextGen Logo" class="logo">
+            <h1 class="shop-name">NextGen</h1>
+        <nav>
+            <div class="menu-icon" id="menu-toggle">&#9776;</div> 
+            <ul id="nav-menu">
+                <li><a href="../HomePage/index.html">Home</a></li>
+                <li><a href="produt.html">Product</a></li>
+                <li><a href="../Register/registration.html">Registration</a></li>
+                <li><a href="../Login/login.html">Login</a></li>
+                <li><a href="../HomePage/contact.html">Contact</a></li>
+                <li><a href="../HomePage/about.html">About</a></li>
+                <li class="cart-icon"><a href="../Cart/cart.php"><img src="../HomePage/Images/Home/cart.png" alt="Cart"></a></li>
+            </ul>
+        </nav>
+        </div>
+    </header>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const menuToggle = document.getElementById("menu-toggle");
+            const navMenu = document.getElementById("nav-menu");
+
+            menuToggle.addEventListener("click", function() {
+                navMenu.classList.toggle("active");
+            });
+        });
+    </script>
+
+    <div class="categories-grid">
+        <div class="category-item">
+            <a href="products/Samsung/samsung.php"><img src="category/samsung.png" alt="Bakery" class="category-image"></a>
+            <div class="category-content">
+                <div class="category-title">Samsung</div>
+                <p class="category-description">Discover the latest Samsung smartphones, known for their cutting-edge technology and stunning displays.</p>
+            </div>
+        </div>
+
+        <div class="category-item">
+            <a href="products/Apple/apple.php"><img src="category/apple.jpg" alt="Beverage" class="category-image"></a>
+            <div class="category-content">
+                <div class="category-title">Apple</div>
+                <p class="category-description">Enjoy the seamless performance and iconic design of Apple iPhones, featuring iOS and cutting-edge hardware.</p>
+            </div>
+        </div>
+
+        <div class="category-item">
+            <a href="products/Xiaomi/xiaomi.php"><img src="category/xiaomi.jpg" alt="Fruits" class="category-image"></a>
+            <div class="category-content">
+                <div class="category-title">Xiaomi</div>
+                <p class="category-description">Browse Xiaomi smartphones, blending affordability with premium features and exceptional battery life.</p>               
+            </div>
+        </div>
+
+        <div class="category-item">
+            <a href="products/Pixel/pixel.php"><img src="category/pixel.webp" alt="Vegetables" class="category-image"></a>
+            <div class="category-content">
+                <div class="category-title">Google Pixel</div>
+                <p class="category-description">Discover Google Pixel phones, known for their exceptional camera quality and pure Android experience.</p>
+            </div>
+        </div>
+
+        <div class="category-item">
+            <a href="products/Oneplus/oneplus.php"><img src="category/oneplus.webp" alt="Pharmacy" class="category-image"></a>
+            <div class="category-content">
+                <div class="category-title">OnePlus</div>
+                <p class="category-description">Experience fast and smooth OnePlus phones with powerful processors and exceptional software optimization.</p>
+            </div>
+        </div>
+
+        <div class="category-item">
+            <a href="products/Honor/honor.php"><img src="category/honor.jpg" alt="Chilled" class="category-image"></a>
+            <div class="category-content">
+                <div class="category-title">Honor</div>
+                <p class="category-description">Find stylish, high-performance smartphones, perfect for users seeking a premium experience.</p>
+            </div>
+        </div>
+
+        <div class="category-item">
+            <a href="products/Huawei/huawei.php"><img src="category/huawei.jpg" alt="Biscuits" class="category-image"></a>
+            <div class="category-content">
+                <div class="category-title">Huawei</div>
+                <p class="category-description">Explore Huawei phones, offering advanced cameras, long battery life, and sleek designs for tech enthusiasts.</p>
+            </div>
+        </div>
+
+        <div class="category-item">
+            <a href="products/Oppo/oppo.php"><img src="category/oppo.png" alt="Care" class="category-image"></a>
+            <div class="category-content">
+                <div class="category-title">Oppo</div>
+                <p class="category-description">Explore durable and reliable Oppo smartphones, combining long-lasting performance with the latest Android updates.</p>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="../HomePage/Images/Home/logo.png" alt="NextGen Logo" class="footer-logo-img"> 
+                <h2>NextGen Mobiles</h2>
+            </div>
+            <div class="footer-links">
+                <ul>
+                    <li><a href="../HomePage/about.html">About Us</a></li>
+                    <li><a href="../HomePage/privacy.html">Privacy Policy</a></li>
+                    <li><a href="../HomePage/terms.html">Terms of Service</a></li>
+                    <li><a href="../HomePage/contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-social">
+                <a href="https://facebook.com" target="_blank" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://twitter.com" target="_blank" class="social-icon"><i class="fab fa-twitter"></i></a>
+                <a href="https://instagram.com" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+                <a href="https://linkedin.com" target="_blank" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 NextGen Mobiles. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        let lastScrollTop = 0;
+        const header = document.getElementById('header');
+
+        window.addEventListener('scroll', function() {
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+            if (scrollTop > lastScrollTop) {
+                // Scrolling down
+                header.classList.add('hidden');
+            } else {
+                // Scrolling up
+                header.classList.remove('hidden');
+            }
+            lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; 
+        });
+    </script>
+</body>
+</html>

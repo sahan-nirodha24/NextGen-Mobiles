@@ -1,0 +1,197 @@
+/* Reset some default browser styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+}
+
+/* Navbar styles */
+.navbar {
+    width: 100%;
+    background-color: #480000; ; /* Green background */
+    padding: 10px 0;
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px; /* Center the content */
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logo a {
+    color: #ff54ee;
+    font-size: 24px;
+    font-weight: bolder;
+    text-decoration: none;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin-left: 20px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.nav-links a:hover {
+    text-decoration: underline;
+    color: #fbff00; 
+}
+
+/* Cart icon styles */
+.cart-icon {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    color: #fff;
+    font-size: 24px;
+}
+
+.cart-icon span {
+    background-color: #e53e3e; /* Red background for the cart count */
+    border-radius: 50%;
+    padding: 5px 10px;
+    margin-left: 5px;
+}
+
+/* Header styles */
+header {
+    background-color: #480000;  /* Match the navbar color */
+    padding: 20px 0;
+    text-align: center;
+    color: #fbff00;
+}
+
+/* Cart table styles */
+.cart-table {
+    width: 100%;
+    max-width: 1200px;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background-color: white; /* Table background */
+}
+
+.cart-table th,
+.cart-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+.cart-table th {
+    background-color: #ff4d00; /* Header background */
+    color: white;
+}
+
+.cart-table tr:nth-child(even) {
+    background-color: #f2f2f2; /* Zebra striping */
+}
+
+.empty-cart {
+    text-align: center;
+    font-size: 18px;
+    color: #777;
+}
+
+/* Quantity input styles */
+.cart-table input[type="number"] {
+    width: 60px; /* Wider input field */
+    padding: 5px; /* Add padding for better usability */
+    border: 1px solid #ddd; /* Border for input */
+    border-radius: 4px; /* Rounded corners */
+}
+
+/* Remove button styles */
+.cart-table button {
+    background-color: #ff00e5; 
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.cart-table button:hover {
+    background-color: #800000; /* Lighten on hover */
+}
+
+/* Total styles */
+.total {
+    text-align: right;
+    font-size: 20px;
+    margin: 20px auto;
+    max-width: 1200px; /* Center the total amount */
+}
+
+.continue-shopping {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.continue-shopping a {
+    text-decoration: none;
+    color: #007BFF; /* Customize color */
+    font-size: 18px; /* Customize font size */
+}
+
+.continue-shopping a:hover {
+    text-decoration: underline; /* Add hover effect */
+}
+
+
+/* Footer styles */
+footer {
+    width: 100%;
+    background-color: #333; /* Dark background */
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: relative; /* Keep footer at the bottom */
+}
+
+.footer-content p {
+    margin: 0;
+    font-size: 14px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .navbar-container {
+        flex-direction: column;
+        align-items: flex-start; /* Align items to the start */
+    }
+
+    .nav-links {
+        flex-direction: column; /* Stack links vertically */
+        margin-top: 10px;
+    }
+
+    .nav-links li {
+        margin: 5px 0; /* Space out links */
+    }
+
+    .cart-table th, .cart-table td {
+        font-size: 14px; /* Smaller font size on mobile */
+    }
+
+    .cart-icon {
+        font-size: 20px; /* Smaller cart icon on mobile */
+    }
+}

@@ -1,0 +1,438 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap');
+
+body {
+    margin: 0;
+    background-color: #fff8be;
+    color: #eee;
+    font-family: Poppins, sans-serif;
+    font-size: 14px;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%; 
+    background-color: #480000; 
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: fixed; 
+    top: 0;
+    z-index: 100;
+    transition: transform 0.3s ease;
+}
+
+header.hidden {
+    transform: translateY(-100%); 
+}
+
+.logo-container {
+    display: flex;
+    align-items:center;
+    justify-content:center;
+    padding: 10px 0;
+    width: 100%;
+}
+
+.logo {
+    width: 70px;
+    height: 70px;
+    border-radius: 180px;
+    margin-right: 10px;
+}
+
+.shop-name {
+    color: #ff54ee;
+    font-size: 32px;
+    font-weight: 700;
+    margin: 0px 20px;
+}
+
+nav {
+    width: 100%; 
+    padding: 0 20px;
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-around; 
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 10px 12px;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+nav ul li a:hover {
+    color: #fbff00;
+    background: rgba(255, 255, 255, 0.25);
+}
+
+.cart-icon {
+    margin-left: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.cart-icon img {
+    width: 30px;
+    height: 30px;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.cart-icon img:hover {
+    transform: scale(1.1);
+    filter: brightness(1.2);
+}
+
+.categories-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
+    margin-top: 150px;
+}
+
+.category-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    height: 400px; 
+}
+
+.category-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.category-image {
+    width: 100%;
+    height: 60%; 
+    object-fit:cover;
+    opacity: 1;
+    transition: opacity 0.3s;
+}
+
+.category-item:hover .category-image {
+    opacity: 0.7;
+}
+
+.category-content {
+    position: absolute;
+    bottom: 0;
+    background: none; 
+    color: white;
+    padding: 15px;
+    width: 100%;
+    text-align: center;
+    height: 40%; 
+    box-sizing: border-box; 
+    transition: transform 0.3s, opacity 0.3s;
+}
+
+.category-content::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(255, 182, 193, 0.7), rgba(255, 105, 180, 0.7)); 
+    z-index: -1; 
+    transition: opacity 0.3s;
+}
+
+.category-item:nth-child(1) .category-content::before {
+    background: linear-gradient(135deg, #adb9e6, #8791fa); 
+}
+
+.category-item:nth-child(2) .category-content::before {
+    background: linear-gradient(135deg, #757367e3, #ac996dea); 
+}
+
+.category-item:nth-child(3) .category-content::before {
+    background: linear-gradient(135deg, #ffe2b6, #e65c00); 
+}
+
+.category-item:nth-child(4) .category-content::before {
+    background: linear-gradient(135deg, #0c2bc7d0, #ff6b6be1); 
+}
+
+.category-item:nth-child(5) .category-content::before {
+    background: linear-gradient(135deg, #ff8e8e, #a40f0f); 
+}
+
+.category-item:nth-child(6) .category-content::before {
+    background: linear-gradient(135deg, #85a4d7, #ff2f9e); 
+}
+
+.category-item:nth-child(7) .category-content::before {
+    background: linear-gradient(135deg, #e6e4d5e9, #d82323e2); 
+}
+
+.category-item:nth-child(8) .category-content::before {
+    background: linear-gradient(135deg, #85ccbc, #33b933);
+    
+}
+
+.category-item:hover .category-content::before {
+    opacity: 0.8; 
+}
+
+.category-title {
+    font-size: 1.5em; 
+    font-weight: 700;
+    margin-bottom: 5px;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.category-description {
+    font-size: 16px;
+    font-weight: 600;
+    color: #333; 
+    animation: fadeIn 0.7s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+footer {
+    background-color: #fff;
+    color:  #780000; 
+    padding: 10px; 
+    text-align: center;
+    position: relative;
+    margin-top: 60px;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px; 
+}
+
+.footer-logo-img {
+    width: 70px; 
+    height: auto; 
+    margin-right: 5px; 
+    border-radius: 180px;
+}
+
+.footer-logo h2 {
+    font-size: 2em; 
+    color:  #000000; 
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 15px; 
+}
+
+.footer-links ul li {
+    display: inline;
+}
+
+.footer-links ul li a {
+    color:  #780000; 
+    text-decoration: none;
+    transition: color 0.3s ease;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.footer-links ul li a:hover {
+    color: #ff8c00; 
+}
+
+.footer-social {
+    margin: 10px 0; 
+}
+
+.social-icon {
+    color: #000000;
+    font-size: 20px; 
+    margin: 0 5px; 
+    transition: transform 0.3s ease;
+}
+
+.social-icon:hover {
+    transform: scale(1.2);
+    color: #0400f9; 
+}
+
+.footer-bottom {
+    border-top: 1.5px solid #000000;
+    padding-top: 5px; 
+}
+
+.footer-bottom p {
+    margin: 0;
+    font-size: 14px; 
+    font-weight: bold;
+}
+
+@media (max-width: 600px) {
+    .logo {
+        width: 50px;
+        height: 50px;
+    }
+
+    .shop-name {
+        font-size: 24px;
+    }
+
+    .menu-icon {
+        display: block; 
+        font-size: 30px; 
+        cursor: pointer; 
+        color: #fff; 
+        margin-left: auto; 
+    }
+
+    nav {
+        display: flex;
+        justify-content: space-between; 
+        align-items: center;
+        padding: 10px; 
+        position: relative; 
+    }
+
+    nav ul {
+        display: none; 
+        flex-direction: column;
+        align-items: center;
+        width: 100%; 
+        background-color: #480000; 
+        position: absolute; 
+        top: 60px; 
+        left: 0; 
+        z-index: 1000; 
+    }
+
+    nav ul.active {
+        display: flex; 
+    }
+
+    nav ul li {
+        margin: 5px 0; 
+        width: 100%; 
+        display: flex; 
+        justify-content: center; 
+        align-items: center; 
+    }
+
+    nav ul li a {
+        font-size: 14px; 
+        padding: 10px; 
+        color: #fff; 
+        text-align: center; 
+        text-decoration: none; 
+        display: block; 
+    }
+
+    nav ul li a.cart-icon {
+        text-align: center;
+    }
+
+    .categories-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .category-item {
+        height: 500px;
+    }
+
+    .category-description {
+        font-size: 12px;
+        font-weight: 600;
+    }
+
+    .category-image {
+        object-fit:fill;
+    }
+
+    .footer-logo h2 {
+        font-size: 1.5em;
+    }
+
+    .footer-links ul {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+
+@media (min-width: 601px) and (max-width: 1024px) {
+    .logo {
+        width: 60px;
+        height: 60px;
+    }
+
+    .shop-name {
+        font-size: 28px;
+    }
+
+    nav ul li {
+        margin: 5px 15px;
+    }
+
+    .categories-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 15px;
+    }
+
+    .category-item {
+        height: 350px;
+    }
+
+    .menu-icon {
+        display: none;
+    }
+
+    .footer-logo h2 {
+        font-size: 1.75em;
+    }
+}
+
+@media (min-width: 601px) {
+    .menu-icon {
+        display: none;
+    }
+}

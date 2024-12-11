@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NextGen | Payment Gateway</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap');
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background-color: #fff8be;
+            color: #333;
+            line-height: 1.6;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        header {
+            background-color: #480000;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 60px;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items:center;
+            justify-content:center;
+            padding: 10px 0;
+            width: 100%;
+        }
+
+        .logo {
+            width: 70px;
+            height: 70px;
+            border-radius: 180px;
+            margin-right: 10px;
+        }
+
+        .shop-name {
+            color: #ff54ee;
+            font-size: 32px;
+            font-weight: 700;
+            margin: 0px 20px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            font-size: 16px;
+            padding: 8px 12px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            background-color: #ff7700;
+            border-radius: 5px;
+            color: #ffffff;
+            text-decoration: none;
+        }
+    
+        .main-content {
+            flex-grow: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .payment-form {
+            background-color: #ffffff; 
+            padding: 30px; 
+            border-radius: 12px; 
+            box-shadow: 0px 6px 25px rgba(0, 0, 0, 0.15); 
+            width: 500px; 
+            max-width: 100%;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(250px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 25px;
+            color: #480000;
+            font-size: 28px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-size: 16px;
+            color: #ff7700; 
+        }
+
+        input[type="text"], select {
+            width: 100%;
+            padding: 12px; 
+            margin-top: 8px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #ff54ee;
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #ff7700;
+        }
+
+        .error {
+            color: red;
+            font-size: 14px;
+            display: none;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            text-align: center;
+            width: 300px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .modal-content p {
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        .payment-methods {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .payment-methods h3 {
+            margin-bottom: 20px;
+            font-size: 18px;
+            color: #480000; 
+        }
+
+        .methods {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .payment-icon {
+            margin-bottom: 20px;
+            font-size: 40px;
+            color: #333;
+            transition: transform 0.3s ease, color 0.3s ease; 
+        }
+
+        .payment-icon:hover {
+            transform: scale(1.2); 
+            color:#ff7700;
+        }
+
+        footer {
+            margin-top: 60px;
+            background-color: #fff;
+            color:  #780000; 
+            padding: 10px; 
+            text-align: center;
+            position: relative;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px; 
+        }
+
+        .footer-logo-img {
+            width: 70px; 
+            height: auto; 
+            margin-right: 5px; 
+            border-radius: 180px;
+        }
+
+        .footer-logo h2 {
+            font-size: 1.5em; 
+            color:  #000000; 
+        }
+
+        .footer-links ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            gap: 15px; 
+        }
+
+        .footer-links ul li {
+            display: inline;
+        }
+
+        .footer-links ul li a {
+            color:  #780000; 
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .footer-links ul li a:hover {
+            color: #ff8c00; 
+        }
+
+        .footer-social {
+            margin: 10px 0; 
+        }
+
+        .social-icon {
+            color: #000000;
+            font-size: 20px; 
+            margin: 0 5px; 
+            transition: transform 0.3s ease;
+        }
+
+        .social-icon:hover {
+            transform: scale(1.2);
+            color: #0400f9; 
+        }
+
+        .footer-bottom {
+            border-top: 1.5px solid #000000;
+            padding-top: 5px; 
+        }
+
+        .footer-bottom p {
+            margin: 0;
+            font-size: 14px; 
+            font-weight: bold;
+        }
+
+              
+        @media (max-width: 600px) {
+            body {
+                font-size: 12px;
+            }
+
+            header {
+                padding: 5px 0;
+            }
+
+            .logo {
+                width: 50px;
+                height: 50px;
+            }
+
+            .shop-name {
+                font-size: 24px;
+            }
+
+            .menu-icon {
+                display: block; 
+                font-size: 30px; 
+                cursor: pointer; 
+                color: #fff; 
+                margin-left: auto; 
+            }
+
+            nav {
+                display: flex;
+                justify-content: space-between; 
+                align-items: center;
+                padding: 10px; 
+                background-color: #ff54ee; 
+                position: relative; 
+            }
+
+            nav ul {
+                display: none; 
+                flex-direction: column;
+                align-items: center;
+                width: 100%; 
+                background-color:#480000; 
+                position: absolute; 
+                top: 60px; 
+                left: 0; 
+                z-index: 1000; 
+                }
+
+            nav ul.active {
+                display: flex; 
+                }
+
+            nav ul li {
+                margin: 5px 0;
+                width: 100%; 
+                }
+
+            nav ul li a {
+                font-size: 14px; 
+                padding: 10px; 
+                color: #fff; 
+                text-align: center; 
+                text-decoration: none; 
+                display: block; 
+                }
+
+            .main-content {
+                padding: 10px;
+            }
+
+            .payment-form {
+                width: 90%;
+            }
+
+            h2 {
+                font-size: 20px;
+            }
+
+            .methods {
+                flex-direction: column;
+            }
+
+            footer {
+                padding: 5px;
+            }
+
+            .footer-logo h2 {
+                font-size: 1.2em;
+            }
+
+            .footer-links ul {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .social-icon {
+                font-size: 16px;
+            }
+        }
+
+       
+        @media (min-width: 601px) and (max-width: 1024px) {
+            body {
+                font-size: 13px;
+            }
+
+            header {
+                padding: 8px 0;
+            }
+
+            .logo {
+                width: 60px;
+                height: 60px;
+            }
+
+            .shop-name {
+                font-size: 28px;
+            }
+
+            nav ul {
+                justify-content: flex-start;
+            }
+
+            nav ul li {
+                margin: 0 10px;
+            }
+
+            .payment-form {
+                width: 80%;
+            }
+
+            h2 {
+                font-size: 22px;
+            }
+
+            .methods {
+                flex-direction: row;
+                gap: 10px;
+            }
+
+            footer {
+                padding: 8px;
+            }
+
+            .footer-logo h2 {
+                font-size: 1.4em;
+            }
+
+            .footer-links ul {
+                gap: 10px;
+            }
+
+            .social-icon {
+                font-size: 18px;
+            }
+        }
+
+        @media (min-width: 601px) {
+            .menu-icon {
+                display: none;
+            }
+        }
+
+
+    </style>
+
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="Images/Home/logo.png" alt="NextGen Logo" class="logo">
+            <h1 class="shop-name">NextGen</h1>
+        </div>
+        <nav>
+            <div class="menu-icon" id="menu-toggle">&#9776;</div> 
+            <ul id="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="privacy.html">Privacy & Policy</a></li>
+                <li><a href="terms.html">Terms Of Services</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <script>
+        // JavaScript to toggle mobile navigation menu
+        document.addEventListener("DOMContentLoaded", function() {
+            const menuToggle = document.getElementById("menu-toggle");
+            const navMenu = document.getElementById("nav-menu");
+
+            menuToggle.addEventListener("click", function() {
+                navMenu.classList.toggle("active"); // Toggle the active class to show/hide the menu
+            });
+        });
+    </script>
+
+     <div class="main-content">
+        <div class="payment-form">
+          <h2>Payment Gateway</h2>
+          <form id="paymentForm" onsubmit="return validateForm()">
+            <div class="form-group">
+              <label for="cardType">Card Type</label>
+              <select id="cardType">
+                <option value="">Select Card Type</option>
+                <option value="visa">Visa</option>
+                <option value="mastercard">MasterCard</option>
+              </select>
+              <span class="error" id="cardTypeError">Please select a card type.</span>
+            </div>
+  
+            <div class="form-group">
+              <label for="cardNumber">Card Number</label>
+              <input type="text" id="cardNumber" placeholder="Enter card number">
+              <span class="error" id="cardNumberError">Please enter a valid card number.</span>
+            </div>
+  
+            <div class="form-group">
+              <label for="cvv">CVV</label>
+              <input type="text" id="cvv" placeholder="Enter CVV">
+              <span class="error" id="cvvError">Please enter a valid CVV.</span>
+            </div>
+  
+            <div class="form-group">
+              <label for="expiryDate">Expiry Date</label>
+              <input type="text" id="expiryDate" placeholder="MM/YY">
+              <span class="error" id="expiryDateError">Please enter a valid expiry date.</span>
+            </div>
+  
+            <div class="form-group">
+              <label for="contact">Email or Phone</label>
+              <input type="text" id="contact" placeholder="Enter email or phone number">
+              <span class="error" id="contactError">Please enter a valid email or phone number.</span>
+            </div>
+  
+            <button type="submit">Proceed</button>
+          </form>
+        </div>
+      </div>
+            <div class="payment-methods">
+                <h3>Accepted Payment Methods</h3>
+                <div class="methods">
+                <i class="fab fa-cc-visa payment-icon"></i>
+                <i class="fab fa-cc-mastercard payment-icon"></i>
+                <i class="fab fa-cc-paypal payment-icon"></i>
+                <i class="fab fa-cc-amex payment-icon"></i>
+                </div>
+            </div>
+            
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="Images/Home/logo.png" alt="NextGen Logo" class="footer-logo-img"> 
+                <h2>NextGen Mobiles</h2>
+            </div>
+            <div class="footer-links">
+                <ul>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                    <li><a href="terms.html">Terms of Service</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-social">
+                <a href="https://facebook.com" target="_blank" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://twitter.com" target="_blank" class="social-icon"><i class="fab fa-twitter"></i></a>
+                <a href="https://instagram.com" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+                <a href="https://linkedin.com" target="_blank" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 NextGen Mobiles. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+
+        function validateForm() {
+        let isValid = true;
+        // Card type validation
+        const cardType = document.getElementById("cardType").value;
+        if (cardType === "") {
+            document.getElementById("cardTypeError").style.display = "block";
+            isValid = false;
+        } else {
+            document.getElementById("cardTypeError").style.display = "none";
+
+        }
+        // Card number validation (example validation for 16 digits)
+        const cardNumber = document.getElementById("cardNumber").value;
+        const cardNumberPattern = /^\d{16}$/;
+        if (!cardNumberPattern.test(cardNumber)) {
+            document.getElementById("cardNumberError").style.display = "block";
+            isValid = false;
+        } else {
+            document.getElementById("cardNumberError").style.display = "none";
+        }
+        // CVV validation (example validation for 3 digits)
+        const cvv = document.getElementById("cvv").value;
+        const cvvPattern = /^\d{3}$/;
+        if (!cvvPattern.test(cvv)) {
+            document.getElementById("cvvError").style.display = "block";
+            isValid = false;
+        } else {
+            document.getElementById("cvvError").style.display = "none";
+        }
+        // Expiry date validation (example for MM/YY format)
+        const expiryDate = document.getElementById("expiryDate").value;
+        const expiryDatePattern = /^(0[1-9]|1[0-2])\/\d{2}$/;
+        if (!expiryDatePattern.test(expiryDate)) {
+            document.getElementById("expiryDateError").style.display = "block";
+            isValid = false;
+        } else {
+            document.getElementById("expiryDateError").style.display = "none";
+        }
+        // Email or Phone validation
+        const contact = document.getElementById("contact").value;
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        const phonePattern = /^\d{10}$/;
+        if (!emailPattern.test(contact) && !phonePattern.test(contact)) {
+            document.getElementById("contactError").style.display = "block";
+            isValid = false;
+        } else {
+            document.getElementById("contactError").style.display = "none";
+        }
+
+        return isValid;
+        }
+    </script>
+</body>
+</html>
+            
+   

@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>NextGen | Privacy & Policy</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap');
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background-color: #fff8be;
+            color: #333;
+            line-height: 1.6;
+            font-size: 14px;
+        }
+
+        header {
+            background-color: #480000;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo-container {
+            display: flex;
+            align-items:center;
+            justify-content:center;
+            padding: 10px 0;
+            width: 100%;
+        }
+
+        .logo {
+            width: 70px;
+            height: 70px;
+            border-radius: 180px;
+            margin-right: 10px;
+        }
+
+        .shop-name {
+            color: #ff54ee;
+            font-size: 32px;
+            font-weight: 700;
+            margin: 0px 20px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            font-size: 16px;
+            border-radius: 5px;
+            padding: 8px 12px;
+            transition: background-color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            background-color: #ff7700;
+            border-radius: 5px;
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        .terms-container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: rgba(255, 254, 254, 0.755);
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .terms-container h1 {
+            color: #480000;
+            font-size: 32px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .terms-container h2 {
+            color: #ff7700;
+            font-size: 20px;
+            margin-top: 20px;
+        }
+
+        .terms-container p, ul {
+            margin: 10px 0;
+            color: rgb(0, 0, 0);
+            font-weight: 500;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        ul li {
+            margin-bottom: 8px;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(250px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        a {
+            color: #0004ff;
+            font-weight: bolder;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+            color: #ff0000c4;
+        }
+
+        footer {
+            background-color: #fff;
+            color:  #780000; 
+            padding: 10px; 
+            text-align: center;
+            position: relative;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px; 
+        }
+
+        .footer-logo-img {
+            width: 70px; 
+            height: auto; 
+            margin-right: 5px; 
+            border-radius: 180px;
+        }
+
+        .footer-logo h2 {
+            font-size: 1.5em; 
+            color:  #000000; 
+        }
+
+        .footer-links ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            gap: 15px; 
+        }
+
+        .footer-links ul li {
+            display: inline;
+        }
+
+        .footer-links ul li a {
+            color:  #780000; 
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .footer-links ul li a:hover {
+            color: #ff8c00; 
+        }
+
+        .footer-social {
+            margin: 10px 0; 
+        }
+
+        .social-icon {
+            color: #000000;
+            font-size: 20px; 
+            margin: 0 5px; 
+            transition: transform 0.3s ease;
+        }
+
+        .social-icon:hover {
+            transform: scale(1.2);
+            color: #0400f9; 
+        }
+
+        .footer-bottom {
+            border-top: 1.5px solid #000000;
+            padding-top: 5px; 
+        }
+
+        .footer-bottom p {
+            margin: 0;
+            font-size: 14px; 
+            font-weight: bold;
+        }
+
+        @media (max-width: 600px) {
+
+        body {
+            font-size: 12px;
+        }
+
+        header {
+            padding: 5px 0;
+        }
+
+        .logo {
+            width: 50px;
+            height: 50px;
+        }
+
+        .shop-name {
+            font-size: 24px;
+        }
+       
+        .menu-icon {
+            display: block; 
+            font-size: 30px; 
+            cursor: pointer; 
+            color: #fff; 
+            margin-left: auto;
+            }
+
+        nav {
+            display: flex;
+            justify-content: space-between; 
+            align-items: center;
+            padding: 10px; 
+            background-color: #ff54ee; 
+            position: relative; 
+         }
+
+        nav ul {
+            display: none; 
+            flex-direction: column;
+            align-items: center;
+            width: 100%; 
+            background-color:#480000; 
+            position: absolute; 
+            top: 60px; 
+            left: 0; 
+            z-index: 1000; 
+            }
+
+        nav ul.active {
+            display: flex; 
+            }
+
+        nav ul li {
+            margin: 5px 0; 
+            width: 100%;
+            }
+
+        nav ul li a {
+            font-size: 14px; 
+            padding: 10px; 
+            color: #fff; 
+            text-align: center; 
+            text-decoration: none;
+            display: block; 
+            }
+
+        .terms-container {
+            margin: 30px auto;
+            padding: 15px; 
+        }
+
+        .terms-container h1 {
+            font-size: 24px; 
+        }
+
+        .terms-container h2 {
+            font-size: 18px; 
+        }
+
+        input, textarea {
+            width: 100%; 
+            padding: 10px; 
+        }
+
+        button {
+            padding: 8px; 
+        }
+
+       
+        footer {
+            padding: 8px; 
+        }
+
+        .footer-logo h2 {
+            font-size: 1.2em; 
+        }
+
+        .footer-links ul {
+            flex-direction: column; 
+            align-items: center; 
+         }
+
+        .footer-links ul li {
+            margin-bottom: 5px; 
+        }
+        }
+
+    
+         @media (min-width: 601px) and (max-width: 1024px) {
+        body {
+            font-size: 14px; 
+        }
+
+        header {
+            padding: 10px 0; 
+        }
+
+        .shop-name {
+            font-size: 28px; 
+        }
+
+        nav ul li {
+            margin: 0 12px; 
+        }
+
+        nav ul li a {
+            font-size: 15px; 
+            padding: 7px 12px; 
+        }
+
+        .terms-container {
+            padding: 20px; 
+            max-width: 90%; 
+        }
+
+        .terms-container h1 {
+            font-size: 28px;
+        }
+
+        .terms-container h2 {
+            font-size: 20px; 
+        }
+
+        input, textarea {
+            width: 100%; 
+            padding: 15px; 
+        }
+
+        button {
+            padding: 10px; 
+        }
+
+        footer {
+            padding: 20px; 
+        }
+
+        .footer-links ul {
+            gap: 10px; 
+        }
+        }
+
+        @media (min-width: 601px) {
+                .menu-icon {
+                    display: none;
+                }
+            }
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="Images/Home/logo.png" alt="NextGen Logo" class="logo">
+            <h1 class="shop-name">NextGen</h1>
+        </div>
+        <nav>
+            <div class="menu-icon" id="menu-toggle">&#9776;</div> 
+            <ul id="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="terms.html">Terms Of Services</a></li>
+            </ul>
+        </nav>
+    </header>
+    <script>
+        // JavaScript to toggle mobile navigation menu
+        document.addEventListener("DOMContentLoaded", function() {
+            const menuToggle = document.getElementById("menu-toggle");
+            const navMenu = document.getElementById("nav-menu");
+
+            menuToggle.addEventListener("click", function() {
+                navMenu.classList.toggle("active"); // Toggle the active class to show/hide the menu
+            });
+        });
+    </script>
+
+    <main>
+        <section class="terms-container">
+            <h1>Privacy Policy</h1>
+            <p>Welcome to NextGen Mobile's Privacy Policy page. We are committed to safeguarding your privacy and ensuring that your personal data is protected.</p>
+
+            <h2>1. Information We Collect</h2>
+            <p>We may collect personal information such as your name, contact details, and any other information you provide through our services.</p>
+
+            <h2>2. How We Use Your Information</h2>
+            <p>Your information is used to provide and improve our services, personalize your experience, and ensure communication related to our products and services.</p>
+
+            <h2>3. Sharing Your Information</h2>
+            <p>We do not share your personal information with third parties, except for trusted partners who assist in providing our services under strict confidentiality agreements.</p>
+
+            <h2>4. Cookies</h2>
+            <p>We use cookies to enhance your experience on our website. You can choose to disable cookies through your browser settings, although this may affect some functionalities of our website.</p>
+
+            <h2>5. Data Security</h2>
+            <p>We implement security measures to protect your data from unauthorized access, misuse, or disclosure. However, no internet-based service can be entirely secure.</p>
+
+            <h2>6. Changes to This Policy</h2>
+            <p>We may update this policy as necessary. Any changes will be communicated via our website, and continued use of our services signifies your acceptance of the updated policy.</p>
+
+            <h2>7. Contact Us</h2>
+            <p>If you have any questions about our Privacy Policy, please contact us at <a href="mailto:privacy@nextgenmobile.com">privacy@nextgenmobile.com</a>.</p>
+        </section>
+    </main>
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="Images/Home/logo.png" alt="NextGen Logo" class="footer-logo-img"> 
+                <h2>NextGen Mobiles</h2>
+            </div>
+            <div class="footer-links">
+                <ul>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                    <li><a href="terms.html">Terms of Service</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-social">
+                <a href="https://facebook.com" target="_blank" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://twitter.com" target="_blank" class="social-icon"><i class="fab fa-twitter"></i></a>
+                <a href="https://instagram.com" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+                <a href="https://linkedin.com" target="_blank" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 NextGen Mobiles. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NextGen</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header id="header">
+        <div class="logo-container">
+            <img src="Images/Home/logo.png" alt="NextGen Logo" class="logo">
+            <h1 class="shop-name">NextGen</h1>
+                <nav>
+                    <div class="menu-icon" id="menu-toggle">&#9776;</div> 
+                    <ul id="nav-menu">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="../Category/produt.html">Products</a></li>
+                        <li><a href="../Register/registration.html">Registration</a></li>
+                        <li><a href="../Login/login.html">Login</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="payment.html">Payments</a></li>
+                        <li class="cart-icon"><a href="../Cart/cart.php"><img src="Images/Home/cart.png" alt="Cart"></a></li>
+                        <li class="search-icon">
+                            <i class="fas fa-search" id="search-toggle"></i>
+                        </li>
+                        <li class="search-container">
+                            <input type="text" placeholder="Search..." name="search" id="search-input" autocomplete="off">
+                            <button type="submit">Search</button>
+                        </li> 
+                    </ul>
+                </nav>
+        </div>
+        <div id="suggestions-box" class="suggestions"></div>
+    </header>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const menuToggle = document.getElementById("menu-toggle");
+            const navMenu = document.getElementById("nav-menu");
+
+            menuToggle.addEventListener("click", function() {
+                navMenu.classList.toggle("active");
+            });
+        });
+    </script>
+    
+    <div class="carousel">
+        <div class="image">
+            <img src="Images/Home/1.webp" alt="">
+        </div>
+        <div class="image">
+            <img src="Images/Home/2.jpg" alt="">
+        </div>
+        <div class="image">
+            <img src="Images/Home/3.jpg" alt="">
+        </div>
+        <div class="image">
+            <img src="Images/Home/4.jpg" alt="">
+        </div>
+        <div class="image">
+            <img src="Images/Home/5.jpg" alt="">
+        </div>
+        <div class="image">
+            <img src="Images/Home/6.avif" alt="">
+        </div>
+        <div class="image">
+            <img src="Images/Home/7.jpg" alt="">
+        </div>
+        <div class="image">
+            <img src="Images/Home/8.jpg" alt="">
+        </div>
+        <div class="image">
+            <img src="Images/Home/9.webp" alt="">
+        </div>
+        <div class="image">
+            <img src="Images/Home/10.jpg" alt="">
+        </div>
+        <div class="button">
+            <a onclick="nextimg(-1)" class="prev">&#10094;</a>
+            <a onclick="nextimg(1)" class="next">&#10095;</a>
+        </div>
+
+        <div class="dots">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+            <span class="dot" onclick="currentSlide(4)"></span>
+            <span class="dot" onclick="currentSlide(5)"></span>
+            <span class="dot" onclick="currentSlide(6)"></span>
+            <span class="dot" onclick="currentSlide(7)"></span>
+            <span class="dot" onclick="currentSlide(8)"></span>
+            <span class="dot" onclick="currentSlide(9)"></span>
+            <span class="dot" onclick="currentSlide(10)"></span>
+        </div>
+    </div>
+    <script src="script.js"></script>
+
+    <div class="offers-section">
+        <h2>Today  Special  Offers</h2>
+        <div class="offers-grid">
+         
+            <div class="offer-item">
+                <div class="offer-image">
+                    <img src="Images/Offers/s24.png" alt="Offer 1">
+                    <span class="discount">22% OFF</span>
+                </div>
+                <div class="offer-info">
+                    <span class="product-name">Samsung Galaxy S24 Ultra 12GB RAM 512GB</span>
+                    <span class="product-price">Rs.459,900.00</span>
+                    <span class="product-discount">Rs.359,900.00</span>
+                    <span class="rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                    </span>
+                    <button class="add-to-cart">
+                        <i class="fa fa-shopping-cart"></i> Add to Cart</button>
+                </div>
+            </div>
+            
+            <div class="offer-item">
+                <div class="offer-image">
+                    <img src="Images/Offers/apple.png" alt="Offer 2">
+                    <span class="discount">20% OFF</span>
+                </div>
+                <div class="offer-info">
+                    <span class="product-name">Apple iPhone 16 Pro Max 512GB</span>
+                    <span class="product-price">Rs.699,900.00</span>
+                    <span class="product-discount">Rs.559,900.00</span>
+                    <span class="rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                    </span>
+                    <button class="add-to-cart">
+                        <i class="fa fa-shopping-cart"></i> Add to Cart</button>
+                </div>
+            </div>
+            
+            <div class="offer-item">
+                <div class="offer-image">
+                    <img src="Images/Offers/redmi.jpg" alt="Offer 3">
+                    <span class="discount">14% OFF</span>
+                </div>
+                <div class="offer-info">
+                    <span class="product-name">Redmi Note 13 Pro Plus 5G 12GB RAM 512GB</span>
+                    <span class="product-price">Rs.144,900.00</span>
+                    <span class="product-discount">Rs.124,900.00</span>
+                    <span class="rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-half-alt"></i>
+                        <i class="fa fa-star-half-alt"></i>
+                    </span>
+                    <button class="add-to-cart">
+                        <i class="fa fa-shopping-cart"></i> Add to Cart</button>
+                </div>
+            </div>
+            
+            <div class="offer-item">
+                <div class="offer-image">
+                    <img src="Images/Offers/pixel.jpg" alt="Offer 4">
+                    <span class="discount">34% OFF</span>
+                </div>
+                <div class="offer-info">
+                    <span class="product-name">Google Pixel 8 Pro 12GB RAM 256GB</span>
+                    <span class="product-price">Rs.439,900.00</span>
+                    <span class="product-discount">Rs.289,900.00</span>
+                    <span class="rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-half-alt"></i>
+                    </span>
+                    <button class="add-to-cart">
+                        <i class="fa fa-shopping-cart"></i> Add to Cart</button>
+                </div>
+            </div>
+             
+             <div class="offer-item">
+                <div class="offer-image">
+                    <img src="Images/Offers/OnePlus.jpg" alt="Offer 4">
+                    <span class="discount">16% OFF</span>
+                </div>
+                <div class="offer-info">
+                    <span class="product-name">OnePlus 12 5G 16GB RAM 512GB</span>
+                    <span class="product-price">Rs.319,900.00</span>
+                    <span class="product-discount">Rs.269,900.00</span>
+                    <span class="rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-half-alt"></i>
+                    </span>
+                    <button class="add-to-cart">
+                        <i class="fa fa-shopping-cart"></i> Add to Cart</button>
+                </div>
+            </div>
+            
+            <div class="offer-item">
+                <div class="offer-image">
+                    <img src="Images/Offers/Honor.webp" alt="Offer 5">
+                    <span class="discount">5% OFF</span>
+                </div>
+                <div class="offer-info">
+                    <span class="product-name">Honor X9b 12+8GB RAM 256GB</span>
+                    <span class="product-price">Rs.134,800.00</span>
+                    <span class="product-discount">Rs.124,900.00</span>
+                    <span class="rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-half-alt"></i>
+                    </span>
+                    <button class="add-to-cart">
+                        <i class="fa fa-shopping-cart"></i> Add to Cart</button>
+                </div>
+            </div>
+            
+             <div class="offer-item">
+                <div class="offer-image">
+                    <img src="Images/Offers/huawei.jpg" alt="Offer 4">
+                    <span class="discount">5% OFF</span>
+                </div>
+                <div class="offer-info">
+                    <span class="product-name">Huawei Nova 8i 8GB RAM 128GB</span>
+                    <span class="product-price">Rs.89,900.00</span>
+                    <span class="product-discount">RRs.84,900.00</span>
+                    <span class="rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-half-alt"></i>
+                        <i class="fa fa-star-half-alt"></i>
+                    </span>
+                    <button class="add-to-cart">
+                        <i class="fa fa-shopping-cart"></i> Add to Cart</button>
+                </div>
+            </div>
+
+             <div class="offer-item">
+                <div class="offer-image">
+                    <img src="Images/Offers/Oppo A17k.jpg" alt="Offer 4">
+                    <span class="discount">10% OFF</span>
+                </div>
+                <div class="offer-info">
+                    <span class="product-name">Oppo A17k 4GB RAM 256GB</span>
+                    <span class="product-price">Rs.49,900.00</span>
+                    <span class="product-discount">Rs.41,900.00</span>
+                    <span class="rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-half-alt"></i>
+                        <i class="fa fa-star-half-alt"></i>
+                    </span>
+                    <button class="add-to-cart">
+                        <i class="fa fa-shopping-cart"></i> Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="customer-reviews-section">
+        <h2>Customer  Reviews</h2>
+        <div class="reviews-grid">
+           
+            <div class="review-card">
+                <div class="review-header">
+                    <img src="images/Reviews/customer1.png" alt="Customer 1" class="customer-photo">
+                    <div class="customer-info">
+                        <h3 class="customer-name">Udesh Madhwa</h3>
+                        <p class="review-date">October 25, 2024</p>
+                    </div>
+                </div>
+                <p class="review-text">"Amazing product! It exceeded my expectations and I highly recommend it to everyone."</p>
+                <span class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-half-alt"></i>
+                </span>
+            </div>
+    
+            <div class="review-card">
+                <div class="review-header">
+                    <img src="images/Reviews/customer2.png" alt="Customer 2" class="customer-photo">
+                    <div class="customer-info">
+                        <h3 class="customer-name">Senvith Buddila</h3>
+                        <p class="review-date">October 26, 2024</p>
+                    </div>
+                </div>
+                <p class="review-text">"Great value for money. Fast delivery and excellent customer service."</p>
+                <span class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                </span>
+            </div>
+    
+            <div class="review-card">
+                <div class="review-header">
+                    <img src="images/Reviews/customer3.png" alt="Customer 3" class="customer-photo">
+                    <div class="customer-info">
+                        <h3 class="customer-name">Vishwa Saranga</h3>
+                        <p class="review-date">October 28, 2024</p>
+                    </div>
+                </div>
+                <p class="review-text">"I love this product! It has made a huge difference in my daily routine."</p>
+                <span class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-half-alt"></i>
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="Images/Home/logo.png" alt="NextGen Logo" class="footer-logo-img"> 
+                <h2>NextGen Mobiles</h2>
+            </div>
+            <div class="footer-links">
+                <ul>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                    <li><a href="terms.html">Terms of Service</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-social">
+                <a href="https://facebook.com" target="_blank" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://twitter.com" target="_blank" class="social-icon"><i class="fab fa-twitter"></i></a>
+                <a href="https://instagram.com" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+                <a href="https://linkedin.com" target="_blank" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 NextGen Mobiles. All rights reserved.</p>
+        </div>
+    </footer>
+    <script>
+            document.getElementById('search-input').addEventListener('input', function() {
+            let query = this.value;
+
+            if (query.length > 0) {
+                fetch(`search.php?query=${query}`)
+                    .then(response => response.json())
+                    .then(data => {
+                        let suggestionsBox = document.getElementById('suggestions-box');
+                        suggestionsBox.innerHTML = ''; 
+
+                        data.forEach(product => {
+                            let suggestionItem = document.createElement('div');
+                            suggestionItem.className = 'suggestion-item';
+                            suggestionItem.textContent = product.product_name; 
+                            suggestionItem.addEventListener('click', function() {
+                                document.getElementById('search-input').value = product.product_name;
+                                suggestionsBox.innerHTML = ''; 
+                            });
+                            suggestionsBox.appendChild(suggestionItem);
+                        });
+                    })
+                    .catch(err => console.error(err));
+            } else {
+                document.getElementById('suggestions-box').innerHTML = ''; 
+            }
+        });
+
+    </script>
+</body>
+</html>
