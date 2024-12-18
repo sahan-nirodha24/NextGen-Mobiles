@@ -1,4 +1,4 @@
-# This is a Simple Definition of The NextGen Mobile Phone Shop
+## This is a Simple Definition of The NextGen Mobile Phone Shop
 
 Please note that download all folders in GitHub repository and put those into a new folder named as "PhoneShop" and save the PhoneShop folder in xampp htdocs.
 
